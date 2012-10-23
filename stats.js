@@ -56,16 +56,25 @@ function flushMetrics() {
     // Clear the counters
     for (key in metrics.counters) {
       metrics.counters[key] = 0;
+      if (config.removeOldStats) {
+        delete metrics.counters[key];
+      }
     }
 
     // Clear the timers
     for (key in metrics.timers) {
       metrics.timers[key] = [];
+      if (config.removeOldStats) {
+        delete metrics.timers[key];
+      }
     }
 
     // Clear the sets
     for (key in metrics.sets) {
       metrics.sets[key] = new set.Set();
+      if (config.removeOldStats) {
+        delete metrics.sets[key];
+      }
     }
   });
 

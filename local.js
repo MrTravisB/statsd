@@ -52,7 +52,7 @@ Optional Variables:
                            { host: 'observer', port: 88125 } ]
 */
 {
-  port: 8125
-, backends: [ "./backends/realtime" ]
-, removeOldStats: true
+  port: 8125,
+  backends: [ "./backends/realtime" ],
+  removeOldStats: true
 }

@@ -25,7 +25,7 @@ var BUCKET_SIZE = 60;
 
 var flush_stats = function flush(ts, metrics) {
     var server = new Server('localhost', 27017, {auto_reconnect: true});
-    var db = new Db('cb_real_time', server);
+    var db = new Db('cb_real_time', server, {safe: false});   
     var i, k, ct, key, bucket, inc, data, d, type, x, temp_key, new_key;
     var aggregated = {};
 
